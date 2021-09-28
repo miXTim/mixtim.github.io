@@ -28,7 +28,6 @@ Contains two themes with light and dark mode.
 
 [Demo](https://mixtim.github.io/) | Thanks for watching!
 
----
 
 <h2>Further information:</h2>
 
