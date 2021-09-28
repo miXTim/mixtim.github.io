@@ -22,7 +22,7 @@ When the application starts, the task list is to be retrieved from localStorage 
 
 Each time the user modifies a task, the arrangement itself will be modified, and it must be saved permanently, so that pending tasks remain there if the current tab is refreshed or even navigated to another page.
 
-Contains two themes with light and dark mode.
+Fully keyboard accessible (except editing annotations). Contains two themes with light and dark mode.
 
 ---
 
