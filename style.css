@@ -202,7 +202,7 @@ footer p {
 }
 
 .px-3 { padding: 0 !important; }
-h1 { padding-left: 1em; }
+h1 { padding: 1em; }
 
 .anim-opacity {-webkit-animation: opac 1s ease-out;animation: opac 1s ease-out;}
 @-webkit-keyframes opac {0% {opacity: 0;} 100% {opacity: 1;}}@keyframes opac {0% {opacity: 0;} 100% {opacity: 1;}}
