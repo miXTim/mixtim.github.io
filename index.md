@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KeepList [by miXTim]</title>
   <link rel="stylesheet" href="./style.css">
-	<link rel="author" content="miXTim-juande megias roca" />
+  <link rel="author" content="miXTim-juande megias roca" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="hsl(200,100%,50%)">
 </head>
 <body>
@@ -29,16 +29,16 @@
     </div>
     
     <p class="time" title="Fecha y hora de entrada"><script type="text/javascript">
-			const fechaDelDia = new Date();
-			const dateLocale = fechaDelDia.toLocaleDateString();
-			const horaLocale = fechaDelDia.toLocaleTimeString();
-			document.write("•" + dateLocale + "-" + horaLocale + "•");
-			</script></p>
+	const fechaDelDia = new Date();
+	const dateLocale = fechaDelDia.toLocaleDateString();
+	const horaLocale = fechaDelDia.toLocaleTimeString();
+	document.write("•" + dateLocale + "-" + horaLocale + "•");
+	</script></p>
     
     <ul id="contenedorTareas"></ul>
 		
     <footer>
-      (cc)2021 <a href="https://comocrearimagen.es">miXTim</a>
+      <p>(cc)2021 <a href="https://comocrearimagen.es">miXTim</a></p>
     </footer>
   </div>
 
