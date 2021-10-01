@@ -24,6 +24,9 @@ Each time the user modifies a task, the arrangement itself will be modified, and
 
 Fully keyboard accessible (except editing annotations). Contains two themes with light and dark mode.
 
+<h2>Changes:</h2>
+
+
 ---
 
 [Demo](https://mixtim.github.io/) | Thanks for watching!
