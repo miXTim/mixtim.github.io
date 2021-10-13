@@ -26,6 +26,8 @@ Fully keyboard accessible (except editing annotations). Contains two themes with
 
 <h2>Changes:</h2>
 
+- Hide original h1.
+- Adjust footer size and position.
 
 ---
 
