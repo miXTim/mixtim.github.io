@@ -198,7 +198,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: min(500px, 100%);
-	margin-left: -1em;
+	margin-left: -2em;
 }
 footer p {
 	padding: 1em;
