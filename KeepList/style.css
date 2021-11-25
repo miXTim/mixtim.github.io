@@ -67,7 +67,10 @@ body {
   background-size: 10px 10px;
 	overflow-y: hidden;
 }
-
+.markdown-body {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
 h1 { display: none; }
 a {
 	color: var(--link-color);
@@ -198,6 +201,7 @@ a.enlace-eliminar {
 footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: min(500px, 100%);
   margin-left: -2em;
 }
