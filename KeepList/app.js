@@ -143,4 +143,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.classList.toggle('dark');
     modeSwitch.classList.toggle('active');
   });
+  
+// retoques publicación
+  const md_body = document.querySelector('.markdown-body');
+  md_body.classList.remove('px-3');
+  md_body.classList.remove('my-5');
 });
