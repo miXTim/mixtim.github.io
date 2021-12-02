@@ -1,0 +1,18 @@
+/*! Specify in CSS */
+
+
+@font-face {
+    font-family: 'miXTim';
+    src: url('mixtim-regular.eot');
+    src: url('mixtim-regular.eot?#iefix') format('embedded-opentype'),
+         url('miXTim-regular.ttf') format('truetype'),
+         url('mixtim-regular.woff2') format('woff2'),
+         url('mixtim-regular.woff') format('woff'),
+         url('miXTim-Regular.svg#mixtimregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@supports (font-variation-settings: normal) {
+	body { font-family: 'miXTim', sans-serif;}
+}
