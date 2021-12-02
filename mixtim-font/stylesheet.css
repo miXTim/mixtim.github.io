@@ -5,7 +5,7 @@
     font-family: 'miXTim';
     src: url('mixtim-regular.eot');
     src: url('mixtim-regular.eot?#iefix') format('embedded-opentype'),
-         url('miXTim-regular.ttf') format('truetype'),
+         url('mixtim-regular.ttf') format('truetype'),
          url('mixtim-regular.woff2') format('woff2'),
          url('mixtim-regular.woff') format('woff'),
          url('miXTim-Regular.svg#mixtimregular') format('svg');
