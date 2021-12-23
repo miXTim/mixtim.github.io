@@ -61,7 +61,7 @@ html {
 }
 body {
   height: 100%;
-  margin: 0 !important;
+  margin: 0;
   background-color: var(--surface3);
   background-image: repeating-radial-gradient( circle, var(--surface2), var(--surface2) 40%, transparent 40%, transparent 55%, var(--surface2) 55%, var(--surface2) 100% );
   background-size: 10px 10px;
@@ -196,9 +196,8 @@ a.enlace-eliminar {
 footer {
   position: fixed;
   bottom: 0;
-  left: 0;
   width: min(500px, 100%);
-  margin-left: -2em;
+  margin-left: -1em;
 }
 footer p {
   padding: 1em 2em;
