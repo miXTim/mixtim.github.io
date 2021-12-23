@@ -105,7 +105,9 @@ button, a {
 }
 
 .title {
-  margin-bottom: 10px;
+  margin: 0 -0.5em 10px;
+  padding: 0.5em 1.5em;
+  background: linear-gradient(to right, var(--secondary-color), #0000);
   color: var(--light);
   font-weight: 800;
   font-size: xx-large;
