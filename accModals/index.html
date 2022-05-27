@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesible Modals</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="container">
+			<h1>Accessible Modal Windows</h1>
+			<p>
+				Here is a modal windows setup using the &lt;role&gt; attribute.<br><br>
+				<a href="https://github.io/miXTim">link before button groups</a>
+			</p>
+      <input type="button" role="button" class="btn" value="Input button" id="infoBtn1" />
+      <button id="openBtn1" aria-label="Abrir ventana flotante 1" title="Abrir ventana flotante 1" onclick="btnGet(this)" data-open-btn> Open modal window 1</button>
+      <div role="button" id="infoBtn2" tabindex="0"> Custom button </div>
+      <button id="openBtn2" aria-label="Abrir ventana flotante 2" title="Abrir ventana flotante 2" onclick="btnGet(this)" data-open-btn> Open modal window 2</button>
+			
+			<p>
+				This content shouldn't become part of the modal setup because it's outside the button groups.<br><br>
+				<a href="https://github.com/miXTim/mixtim.github.io">link after accordion groups</a>
+			</p>
+		</div>
+
+    <div id="modalWindow1" class="modal" role="dialog" aria-label="dialog" tabindex="-1">
+      <div class="overlay">&nbsp;</div>
+      <div class="lightbox" role="document">  <!-- inner element with autofocus="true" -->
+        <h1 aria-label="Modal window title">Modal window heading</h1>
+        <p>Mollitia facere sunt quisquam, similique <a href="#!">corporis nobis</a> deleniti adipisci? Facere amet, dignissimos esse et saepe, voluptatibus voluptatum dolore iusto doloremque accusamus eveniet. Incidunt, ipsum. Nulla eum exercitationem quasi earum. Fugit provident nesciunt dicta eveniet? Magnam voluptas quia voluptate iusto voluptatum quo?</p>
+        <button type="button" id="closeBtn1" class="btn-close" aria-label="Close this modal window">
+					<svg width="16" height="16" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" version="1.1" stroke="#333333" stroke-width="6" stroke-linecap="round" role='img' focusable='false'><path d="m5 5 10 10M5 15 15 5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="modalWindow2" class="modal" role="dialog" aria-label="dialog" tabindex="-1">
+      <div class="overlay">&nbsp;</div>
+      <div class="lightbox" role="document">  <!-- inner element with autofocus="true" -->
+        <h1 aria-label="Modal window title">Second modal window</h1>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <p>Mollitia facere sunt quisquam, similique <a href="#!">corporis nobis</a> deleniti adipisci? Facere amet, dignissimos esse et saepe, voluptatibus voluptatum dolore iusto doloremque accusamus eveniet. Incidunt, ipsum. Nulla eum exercitationem quasi earum. Fugit provident nesciunt dicta eveniet? Magnam voluptas quia voluptate iusto voluptatum quo?</p>
+				<p>Autem, veniam temporibus numquam corrupti hic iusto eos consectetur, debitis necessitatibus, molestiae dolores nihil. Corporis alias officiis numquam rerum pariatur nesciunt incidunt vitae. Provident ducimus voluptatum id itaque magnam nam iure molestias similique quidem fuga rem possimus officia aperiam ut quaerat labore.</p>
+				<p>Nulla eum exercitationem quasi earum fugit provident nesciunt dicta eveniet. Mollitia facere sunt quisquam, similique corporis nobis deleniti adipisci? Facere amet, dignissimos esse et saepe, voluptatibus voluptatum dolore iusto doloremque accusamus eveniet. Incidunt, ipsum. Magnam voluptas quia voluptate iusto voluptatum quo?</p>
+        <button type="button" id="closeBtn2" class="btn-close" aria-label="Close this modal window">
+					<svg width="16" height="16" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" version="1.1" stroke="#333333" stroke-width="6" stroke-linecap="round" role='img' focusable='false'><path d="m5 5 10 10M5 15 15 5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="accModals.js"></script>
+  </body>
+</html>

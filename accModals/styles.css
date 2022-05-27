@@ -1,0 +1,135 @@
+
+:root {
+  --color: hsl(348deg 71% 35%);
+  --shadow-color: 0deg 0% 0%;
+  --shadow-low: 0.6px 1px 2px hsl(var(--shadow-color) / 0.13),
+    2px 3px 3px -1.8px hsl(var(--shadow-color) / 0.12);
+  --shadow-medium: 0.6px 1px 2px hsl(var(--shadow-color) / 0.13),
+    0.9px 2.5px 2.8px -1.4px hsl(var(--shadow-color) / 0.12),
+    3.7px 10px 11.4px -2.8px hsl(var(--shadow-color) / 0.11);
+  --shadow-high: 0.6px 1px 2px hsl(var(--shadow-color) / 0.12),
+    1.2px 3.1px 3.6px -0.6px hsl(var(--shadow-color) / 0.11),
+    2.5px 6.6px 7.6px -1.1px hsl(var(--shadow-color) / 0.11),
+    4.9px 13.2px 15.1px -1.7px hsl(var(--shadow-color) / 0.1),
+    9.2px 24.8px 28.4px -2.3px hsl(var(--shadow-color) / 0.1),
+    16.1px 43.5px 49.7px -2.8px hsl(var(--shadow-color) / 0.09);
+}
+*:focus {
+  outline: 2px solid var(--color);
+  outline-offset: 2px;
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  padding: 1em 10% 3em;
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	text-align: center;
+  flex-direction: column;
+  gap: 1em;
+	max-width: 800px;
+  height: 90vh;
+	margin: 0 auto
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+  z-index: 101;
+}
+.modal .overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(#0000,#0000,hsla(var(--shadow-color)/50%)), hsla(var(--shadow-color)/50%);
+}
+
+.modal.active {
+  display: block;
+  pointer-events: auto;
+  animation: fadeIn 500ms ease-out forwards;
+  backdrop-filter: blur(4px);
+}
+#container .modal .active {
+  filter: blur(4px);
+}
+
+.modal[closing] {
+  display: initial;
+  pointer-events: none;
+  animation: fadeOut 500ms ease-in forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+}
+@keyframes fadeIn {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+}
+@-webkit-keyframes fadeOut {
+  to { opacity: 0;}
+}
+@keyframes fadeOut {
+  to { opacity: 0;}
+}
+
+.modal .lightbox {
+  position: inherit;
+  inset: 0;
+	width:  fit-content;
+	width: -webkit-fill-available;
+  max-width: 500px;
+  max-height: 100%;
+  padding: 0.25em 1.5em 0.5em;
+  background-color: hsl(0 0% 100%);
+	border: none;
+  box-shadow: var(--shadow-high);
+  transition: 200ms box-shadow ease-in;
+	overflow: auto;
+}
+.modal .lightbox:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 4px 7px 5px 5px;
+  background: none;
+  border: none;
+  border-radius: 0.1em;
+}
+.btn-close:hover svg,
+.btn-close:focus svg {
+  stroke: var(--color);
+  transform: scale(1.25);
+  transition: transform 250ms ease-in-out;
+}
+
+@media screen and (min-height: 440px) and (min-width: 500px) {
+	.modal .lightbox {
+		bottom: auto;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: 2px solid var(--color);
+		border-radius: 0.5em;
+	}
+}
+
+.btn, [role="button"] {
+  display: inline-block;
+  border: 1px solid #222;
+  padding: 4px 10px;
+  background: #ddd;
+	cursor: pointer;
+  user-select: none;
+}
