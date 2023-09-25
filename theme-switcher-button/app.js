@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 
 	window.onload = function() {
-		pedirRuta("theme-switcher-button.html", fillIcons);
+		pedirRuta("index.html", fillIcons);
 	};
 
 	function pedirRuta(ruta, ejecutarOk, ejecutarErr){
