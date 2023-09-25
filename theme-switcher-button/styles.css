@@ -69,11 +69,10 @@ body {
 a {
   color: var(--clr-txt2);
   font-weight: 600;
-  text-decoration: none;
 }
 a:hover, a:focus {
   color: var(--clr-txt1);
-  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 button {
   -webkit-appearance: none;
