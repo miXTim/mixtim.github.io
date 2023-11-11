@@ -1,4 +1,4 @@
-<h1>GitHub web pages repository for demos</h1>
+<h1>GitHub web demos repository</h1>
 
 
 - [KeepList](https://mixtim.github.io/KeepList/)
@@ -6,4 +6,4 @@
 - [Accessible modal windows](https://mixtim.github.io/accModals/)
 - [Theme switcher button](https://mixtim.github.io/theme-switcher-button/)
 <br><hr>
-Thanks for watching! ⭐
+Thanks for watching! 🐜
