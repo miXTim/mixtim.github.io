@@ -1,4 +1,4 @@
-<h1>GitHub web demos repository</h1>
+<h1>Web demos repository</h1>
 
 
 - [KeepList](https://mixtim.github.io/KeepList/)
