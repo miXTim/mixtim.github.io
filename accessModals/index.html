@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesible Modals v1.0</title>
+    <link rel="stylesheet" href="styles.css">
+	<meta name="theme-color" content="var(--clr-bg)"media="prefers-color-scheme: dark light"/>
+  </head>
+  <body>
+  
+    <div id="wrapper">
+	
+	  <h1>Accessible Modal Dialogs</h1>
+	  
+	  <p>Here is a modal windows setup using the <code>&lt;role&gt;</code> attribute and enhanced accessibility.<br><br>
+		<a href="https://github.io/miXTim" title="Link to my profile">link before button groups</a>
+	  </p>
+	
+      <input type="button" role="button" aria-label="staff" class="btn" value="Input button" id="infoBtn1" />
+	  
+      <button id="openBtn1" aria-label="Open modal window 1" title="Open modal window 1" onclick="btnGet(this)" data-open-btn> Open modal window 1
+	  </button>
+	  
+      <div role="button" id="infoBtn2" tabindex="0"> Custom button </div>
+	  
+      <button id="openBtn2" aria-label="Open modal window 2" title="Open modal window 2" onclick="btnGet(this)" data-open-btn> Open modal window 2
+	  </button>
+	  
+	  <p>
+		This content shouldn't become part of the modal setup because it's outside the button groups.<br><br>
+		<a href="https://example.com/">example.com link for accessibility testing</a>
+	  </p>
+		
+	</div>
+
+    <div id="modal_1" class="modal" role="dialog" aria-label="dialog 1" tabindex="-1">
+      <div class="overlay">&nbsp;</div>
+      <div class="lightbox" role="document">
+        <h1 aria-label="Modal window title">Modal window heading</h1>
+        <p>A <a href="#!">modal window</a> is a graphical component that is displayed when executing a control, link or button of a web page, with content inside it and that visually meets the following conditions:</p>
+		<ul>
+			<li>The modal window and its content are shown in the foreground.</li>
+			<li>The content that remains in the background, within which the control that launched the modal window is located, is darkened and user interaction is disabled. Users <em>must</em> interact with the modal window before they can return to the parent window.</li>
+		</ul>
+		
+        <button type="button" id="closeBtn1" class="btn-close" aria-label="Close this modal window">
+			<svg width="16" height="16" stroke="var(--clr-txt)" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" role='img' focusable='false'><path d="m5 5 10 10M5 15 15 5" stroke-width="6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="modal_2" class="modal" role="dialog" aria-label="dialog 2" tabindex="-1">
+      <div class="overlay">&nbsp;</div>
+      <div class="lightbox" role="document">
+        <h1 aria-label="Modal window title">Second modal window</h1>
+        <h2>Accessible Modals v1.0</h2>
+        <p>Navigation should be available only through the browser's system components, and through the elements contained in the modal. The document has the concept of a focus ring, which is the order in which elements obtain focus. By default the focus ring shall be obtained using document order. All focusable elements must be part of the default focus ring.</p>
+		<p>It is essential that a container maintain a usable and consistent strategy when focus leaves a container and is then later refocused, by dynamically modifying elements' navigation attributes. All content outside the modal window should be ignored and interactive elements should be locked for user manipulation: clicking, focusing and navigating.</p>
+		<p>System-dependent input facilities (e.g., the Tab key on most desktop computers) should be supported to allow navigation between elements that can obtain focus, and conversely, backing up with Shift + Tab, preventing the user from navigating to other parts of the document outside of the modal window. The focus is said to be “trapped” inside the dialog until the user explicitely decides to leave it.</p>
+        <button type="button" id="closeBtn2" class="btn-close" aria-label="Close this modal window">
+			<svg width="16" height="16" stroke="var(--clr-txt)" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" role='img' focusable='false'><path d="m5 5 10 10M5 15 15 5" stroke-width="6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="accessModals.js"></script>
+  </body>
+</html>
