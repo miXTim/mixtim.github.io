@@ -2,6 +2,7 @@
 	accessModals.js
 	Accessible Modals v1.0
 	EcmaScript version: 6
+	Apache 2.0 License (http://www.apache.org/licenses/LICENSE-2.0)
 ***/
 
 // all focusable elements
@@ -9,7 +10,7 @@ const interactiveSelectors = 'a, button, iframe, input, select, textarea, [tabin
 const docTitle = document.title;
 let trigger, i = 0;
 
-/*** creamos un constructor de clase con sus propiedades y métodos ***/
+/*** create a class constructor with its properties and methods ***/
 class ModalWindow {
   constructor(modal) {
     this.modal = modal;
@@ -27,7 +28,7 @@ class ModalWindow {
     this.modal.classList.toggle('js-active');
     wrapper.setAttribute('aria-hidden', this.modal.classList.contains('js-active'));
     wrapper.setAttribute('tabindex', '-1');
-	// recorremos the Array to make controls not focusable in #main
+	// we go through the array to make controls not focusable in #main
     wrapper.interactiveElements = wrapper.querySelectorAll(interactiveSelectors);
     wrapper.interactiveElements.forEach(element => {
       element.setAttribute('tabindex', '-1');
@@ -60,7 +61,7 @@ openButtons.forEach((button, i) => {
   modal.interactiveElements.forEach(element => element.setAttribute('tabindex', '0'));
 });
 
-// El método utilizado para eliminar el modal
+// method used to remove the modal
 function close(modal) {
   modal.toggle();
   modal.interactiveElements.forEach(element => element.setAttribute('tabindex', '-1'));

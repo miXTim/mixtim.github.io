@@ -5,7 +5,7 @@
   --shadow-high: 2px 16px 32px -10px hsl(var(--shadow-color) / 0.35);
 }
 @media (prefers-color-scheme: light) {
-	:root {
+  :root {
 	--primary: hsl(200deg 75% 36%);
 	--clr-txt: hsl(0deg, 0%, 20%);
     --clr-hc: hsl(200deg, 20%, 96%);
@@ -13,15 +13,15 @@
 	--clr-panel: rgb(249, 249, 249);
     --clr-comp: hsl(200deg, 15%, 90%);
     --clr-border: hsl(0deg, 0%, 75%);
-	}
+  }
 }
 @media (prefers-color-scheme: dark) {
   :root {
 	--primary: hsl(200deg 66% 50%);
     --clr-txt: rgb(250, 250, 250);
     --clr-hc: hsl(var(--shadow-color));
-    --clr-bg: hsl(200deg, 20%, 8%);
-    --clr-panel: hsl(200deg, 20%, 12%);
+	--clr-bg: hsl(200deg, 20%, 8%);
+	--clr-panel: hsl(200deg, 20%, 12%);
     --clr-comp: hsl(200deg, 20%, 28%);
     --clr-border: hsl(var(--shadow-color));
   }
@@ -35,7 +35,16 @@ body {
   background-color: var(--clr-bg);
   font-family: system-ui, sans-serif;
 }
-a { color: var(--primary)}
+h1 {
+  margin-bottom: 0;
+  font: condensed 300 2.3em/1 sans-serif;
+  letter-spacing: 0.0375em;
+}
+a {
+  color: var(--primary);
+  text-underline-offset: 2px;
+}
+
 #wrapper {
   display: flex;
   justify-content: center;
@@ -43,8 +52,8 @@ a { color: var(--primary)}
   flex-direction: column;
   gap: 2em;
   margin: auto;
+  padding: 2rem 8px 3rem;
   max-width: 800px;
-  height: 98dvh;
   background-color: var(--clr-panel);
   color: var(--clr-txt);
   text-align: center;
@@ -55,6 +64,7 @@ a { color: var(--primary)}
   display: none;
   position: fixed;
   inset: 0;
+  text-wrap: balance;
   pointer-events: none;
   z-index: 101;
 }
@@ -98,7 +108,7 @@ a { color: var(--primary)}
   inset: 0;
   max-width: 500px;
   max-height: 100%;
-  padding: 0 1.75em 0.75em;
+  padding: 0.5em 1.75em 0.75em;
   background-color: var(--clr-hc);
   color: var(--clr-txt);
   border: none;
@@ -106,17 +116,17 @@ a { color: var(--primary)}
   transition: 160ms box-shadow ease-in;
   overflow: auto;
 }
-.modal .lightbox:hover {
-  box-shadow: var(--shadow-medium);
-}
-@media screen and (min-height: 440px) and (min-width: 500px) {
+@media screen and (height > 440px) and (width > 500px) {
 	.modal .lightbox {
 		bottom: auto;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		border: 2px solid var(--primary);
-		border-radius: 0.5em;
+		border-radius: 0.5em 0.5em 0 0;
+	}
+	.modal .lightbox:hover {
+	  box-shadow: var(--shadow-medium);
 	}
 }
 /* buttons */
