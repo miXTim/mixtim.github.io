@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
           btn.parentNode.className ='active-menu-item';
           document.documentElement.className = btn.textContent;
 	        const wrap = toggles.querySelector('span svg');
-          wrap.innerHTML = '<use href="#' + btn.textContent +'"></use>';
+          wrap.innerHTML = '<use href=\"#' + btn.textContent +'\"></use>';
           toggles.setAttribute('title', btn.textContent + " theme");
         });
       });
