@@ -30,6 +30,18 @@
   outline: 2px solid var(--primary);
   outline-offset: 2px;
   text-decoration: none;
+  border-radius: 0.001em;
+}
+@media (prefers-reduced-motion: no-preference) {
+	:focus-visible {
+		transition: outline-offset 75ms ease-out;
+	}
+	:not(:active):focus-visible {
+		transition-duration: .25s;
+	}
+}
+:not(:active):focus-visible {
+	outline-offset: .2rem;
 }
 body {
   background-color: var(--clr-bg);
