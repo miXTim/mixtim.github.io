@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
           btn.parentNode.className ='active-menu-item';
           document.documentElement.className = btn.textContent;
 	        const wrap = toggles.querySelector('span svg');
-          wrap.setHTML('<use href=\"#' + btn.textContent +'\"></use>';
+          wrap.setHTML('&lt;use href=&quot;#' + btn.textContent +'&quot;&gt;&lt;/use&gt;';
           toggles.setAttribute('title', btn.textContent + " theme"));
         });
       });
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const span = document.createElement('span');
     span.classList.add('button-wrap');
     const ico = document.createElement('span');
-    ico.innerHTML = '<svg aria-hidden="true" focusable="false">'+'<use href=\"#' + text +'\"></use></svg>';
+    ico.innerHTML = '&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;'+'&lt;use href=&quot;#' + text +'&quot;&gt;&lt;/use&gt;&lt;/svg&gt;';
     span.appendChild(ico);
     span.appendChild(document.createTextNode(text));
     temp.appendChild(span);
