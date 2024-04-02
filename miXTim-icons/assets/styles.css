@@ -208,7 +208,7 @@ h1 + h2 {
   text-align: left;
   box-shadow: 2px 4px 10px #000;
   border-radius: 4px;
-  border: 1px solid blue;
+  border: 1px solid #001b4d;
   z-index: 5;
 }
 .popover:after {
