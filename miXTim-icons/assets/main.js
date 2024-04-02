@@ -36,7 +36,7 @@ document.querySelectorAll('i').forEach(function(icon) {
 	    const svg = this.firstElementChild.outerHTML;
 	    const name = this.parentElement.lastElementChild.textContent;
 
-      var popover = `<div class='popover First'><span class='close'>&times;</span><h3>` + name + `</h3><div class='popGrid' title='usage examples'><div class='ico x128' title='128px'>` + svg + `</div><div class='ico x48' title='48px'>` + svg + `</div><div class='ico' title='32px'>` + svg + `</div><div class='ico x16' title='16px'>` + svg + `</div></div><p><u>Quitar bordes</u></p></div>`;
+      var popover = `&lt;div class='popover First'&gt;&lt;span class='close'&gt;&times;&lt;/span&gt;&lt;h3&gt;` + name + `&lt;/h3&gt;&lt;div class='popGrid' title='usage examples'&gt;&lt;div class='ico x128' title='128px'&gt;` + svg + `&lt;/div&gt;&lt;div class='ico x48' title='48px'&gt;` + svg + `&lt;/div&gt;&lt;div class='ico' title='32px'&gt;` + svg + `&lt;/div&gt;&lt;div class='ico x16' title='16px'&gt;` + svg + `&lt;/div&gt;&lt;/div&gt;&lt;p&gt;&lt;u&gt;Quitar bordes&lt;/u&gt;&lt;/p&gt;&lt;/div&gt;`;
     };
 
     document.querySelectorAll('li').forEach(function(li) {
