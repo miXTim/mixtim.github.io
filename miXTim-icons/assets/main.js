@@ -36,7 +36,7 @@ document.querySelectorAll('i').forEach(function(icon) {
 	    const svg = this.firstElementChild.outerHTML;
 	    const name = this.parentElement.lastElementChild.textContent;
 
-      var popover = `&lt;div class='popover First'&gt;&lt;span class='close'&gt;&times;&lt;/span&gt;&lt;h3&gt;` + name + `&lt;/h3&gt;&lt;div class='popGrid' title='usage examples'&gt;&lt;div class='ico x128' title='128px'&gt;` + svg + `&lt;/div&gt;&lt;div class='ico x48' title='48px'&gt;` + svg + `&lt;/div&gt;&lt;div class='ico' title='32px'&gt;` + svg + `&lt;/div&gt;&lt;div class='ico x16' title='16px'&gt;` + svg + `&lt;/div&gt;&lt;/div&gt;&lt;p&gt;&lt;u&gt;Quitar bordes&lt;/u&gt;&lt;/p&gt;&lt;/div&gt;`;
+      var popover = `&lt;div class=&quot;popover First&quot;&gt;&lt;span class=&quot;close&quot;&gt;&times;&lt;/span&gt;&lt;h3&gt;` + name + `&lt;/h3&gt;&lt;div class=&quot;popGrid&quot; title=&quot;usage examples&quot;&gt;&lt;div class=&quot;ico x128&quot; title=&quot;128px&quot;&gt;` + svg + `&lt;/div&gt;&lt;div class=&quot;ico x48&quot; title=&quot;48px&quot;&gt;` + svg + `&lt;/div&gt;&lt;div class=&quot;ico&quot; title=&quot;32px&quot;&gt;` + svg + `&lt;/div&gt;&lt;div class=&quot;ico x16&quot; title=&quot;16px&quot;&gt;` + svg + `&lt;/div&gt;&lt;/div&gt;&lt;p&gt;&lt;u&gt;Quitar bordes&lt;/u&gt;&lt;/p&gt;&lt;/div&gt;`;
     };
 
     document.querySelectorAll('li').forEach(function(li) {
