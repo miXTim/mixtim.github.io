@@ -25,18 +25,72 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     req.send()
   }
-  
+
+  // Emtt search box
+  document.querySelector('.empty').addEventListener('click', function() {
+	  document.querySelector('.search').value = '';
+	  this.style.display = 'none';
+	  document.querySelectorAll('li').forEach(function(li) {
+      li.style.display = '';
+    });
+  });
+  // Search
+  document.querySelector('.search').addEventListener('keyup', function() {
+    var val = this.value.toLowerCase();
+
+    if (val.length > 0) { 
+      document.querySelector('.empty').style.display = 'inline';
+	  } else {
+      document.querySelector('.empty').style.display = 'none';
+	  }
+
+	  document.querySelectorAll('li').forEach(function(li) {
+      var text = li.textContent.toLowerCase();
+      if (text.includes(val)) {
+        li.style.display = '';
+      } else {
+        li.style.display = 'none';
+      }
+	  });
+  });
+});
+
+// Progress Bar
+const progressBar = document.querySelector('#progress');
+
+window.addEventListener('scroll', function() {
+	let width = (document.body.scrollTop || document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+	progressBar.style.width = `${width}%`;
+});
+
+// Theme switch
+let darkmode = localStorage.getItem('darkmode')
+const themeSwitch = document.getElementById('theme-switch');
+const enableDarkmode = () => {
+    document.body.classList.add('darkmode')
+    localStorage.setItem('darkmode', 'active')
+}
+const disableDarkmode = () => {
+    document.body.classList.remove('darkmode')
+    localStorage.setItem('darkmode', null)
+}
+
+if(darkmode === "active") enableDarkmode()
+
+themeSwitch.addEventListener('click', () => {
+    darkmode = localStorage.getItem('darkmode')
+    darkmode !== "active" ? enableDarkmode() : disableDarkmode()
 });
 
 // Pop Over
 document.querySelectorAll('i').forEach(function(icon) {
   icon.addEventListener('click', function() {
-    // Verifica si el elemento padre contiene la clase 'icon'
+
     if (this.parentElement.classList.contains('icon')) {
 	    const svg = this.firstElementChild.outerHTML;
 	    const name = this.parentElement.lastElementChild.textContent;
 
-      var popover = '<div class="popover First"><span class="close">&times;</span><h3>' + name + '</h3><div class="popGrid" title="usage examples"><div class="ico x128" title="128px">' + svg + '</div><div class="ico x48" title="48px">' + svg + '</div><div class="ico" title="32px">' + svg + '</div><div class="ico x16" title="16px">' + svg + '</div></div><p><u>Quitar bordes</u></p></div>';
+      var popover = `<div class="popover First"><span class="close">&times;</span><h3> ${name} </h3><div class="popGrid" title="usage examples"><div class="ico x128" title="128px"> ${svg} </div><div class="ico x48" title="48px"> ${svg} </div><div class="ico" title="32px"> ${svg} </div><div class="ico x16" title="16px"> ${svg} </div></div><p><u>Quitar bordes</u></p></div>`;
     };
 
     document.querySelectorAll('li').forEach(function(li) {
@@ -48,7 +102,7 @@ document.querySelectorAll('i').forEach(function(icon) {
 	  parent.insertAdjacentHTML('beforeend', popover);
   })
 });
-
+// Close popover
 function hideMe() {
   const fade = [
     { opacity: "0" },
@@ -69,19 +123,19 @@ function hideMe() {
     li.classList.remove('active');
   });
 }
-// Close button
+
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('close')) {
     hideMe();
   }
 });
-// Out Click
+
 document.addEventListener('click', function(event) {
   if (!event.target.closest('.popover, li')) {
     hideMe();
   }
 });
-// Close your popover pressing ESC key
+
 window.addEventListener('keyup', event => {
   if (event.key === 'Escape'){
     hideMe();
