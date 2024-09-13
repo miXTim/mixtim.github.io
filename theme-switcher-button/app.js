@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const span = document.createElement('span');
     span.classList.add('button-wrap');
     const ico = document.createElement('span');
-    ico.innerHTML = '&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;'+'&lt;use href=&quot;#' + text +'&quot;&gt;&lt;/use&gt;&lt;/svg&gt;';
+    ico.innerHTML = '<svg aria-hidden=\"true\" focusable=\"false\">'+'<use href=\"#' + text +'\"></use></svg>';
     span.appendChild(ico);
     span.appendChild(document.createTextNode(text));
     temp.appendChild(span);
