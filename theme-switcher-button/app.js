@@ -15,24 +15,24 @@ document.addEventListener("DOMContentLoaded", () => {
 		pedirRuta("index.html", fillIcons);
 	};
 
-	function pedirRuta(ruta, ejecutarOk, ejecutarErr){
-		let req =  new XMLHttpRequest();
+  function pedirRuta(ruta, ejecutarOk, ejecutarErr){
+	let req =  new XMLHttpRequest();
     req.overrideMimeType("image/svg+xml");
-		req.open("GET", ruta, true);
-		req.onreadystatechange = function(){
-			if (req.readyState == 4) {
-				if (req.status == 200){
-					let text = req.responseText;
-					ejecutarOk(text);
-				} else if (ejecutarErr) {
-					ejecutarErr(req.status);
-				}
+	req.open("GET", ruta, true);
+	req.onreadystatechange = function(){
+		if (req.readyState == 4) {
+			if (req.status == 200){
+				let text = req.responseText;
+				ejecutarOk(text);
+			} else if (ejecutarErr) {
+				ejecutarErr(req.status);
 			}
-		};
-		req.send();
+		}
 	};
+	req.send();
+  };
   
-	const items = ["Light", "Dark", "Dim"];
+  const items = ["Light", "Dark", "Dim"];
   const list = document.createElement('ul');
   list.classList.add('subnav');
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     list.appendChild(item);
   }
 
-	const toggles = document.querySelector('.button.action');
+  const toggles = document.querySelector('.button.action');
   toggles.addEventListener("click", function(){
     if (this.parentNode.className == "theme") {
       this.parentNode.appendChild(list);
