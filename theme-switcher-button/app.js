@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.documentElement.className = btn.textContent;
 	        const wrap = toggles.querySelector('span svg');
           wrap.setHTML('<use href=\"#' + btn.textContent +'\"></use>');
-          toggles.setAttribute('title', btn.textContent + " theme"));
+          toggles.setAttribute('title', btn.textContent + " theme");
         });
       });
     } else {
