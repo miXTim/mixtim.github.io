@@ -99,7 +99,7 @@ document.querySelectorAll('i').forEach(function(icon) {
 
     if (this.parentElement.classList.contains('icon')) {
 	    const svg = this.firstElementChild.outerHTML;
-	    const name = this.parentElement.lastElementChild.textContent;
+	    const name = escapeHtml(this.parentElement.lastElementChild.textContent);
 
       var popover = document.createElement('div');
 	    popover.className = "popover First";
