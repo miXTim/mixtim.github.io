@@ -124,8 +124,6 @@ p.lead {
     font-size: clamp(1rem, 10vw - 1rem, 1.1875rem);
   }
 }
-/* sólo en master, quitar en github.io */
-header p:last-child { color: hsl(var(--clr200));}
 
 a {
   color: hsl(var(--clr300));
