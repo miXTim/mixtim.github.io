@@ -118,7 +118,7 @@ p.desc {
 }
 @-moz-document url-prefix() {
   h1 {
-	  font-size: clamp(2.2rem, 10vw - 1rem, 4rem);
+    font-size: clamp(2.2rem, 10vw - 1rem, 4rem);
   }
   p.desc {
     font-size: clamp(0.9375rem, 10vw - 1rem, 1.1875rem);
@@ -127,8 +127,6 @@ p.desc {
     font-size: clamp(0.875rem, 4vw - 1rem, 1rem);
   }
 }
-/* sólo en master, quitar en github.io */
-header p:last-child { color: hsl(var(--clr200));}
 
 a {
   color: hsl(var(--clr300));
@@ -136,7 +134,7 @@ a {
   -webkit-transition: color 200ms;
   transition: color 200ms;
   &:hover {
-	  color: hsl(var(--clr200));
+    color: hsl(var(--clr200));
   }
 }
 a span { font-size: 0;}
