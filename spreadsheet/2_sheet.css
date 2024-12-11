@@ -1,0 +1,129 @@
+@charset "UTF-8";
+* { box-sizing: border-box;}
+a{text-decoration:none}a:link{color:#15c}a:visited{color:#61c}a:active{color:#d14836}a:hover{text-decoration:underline}.ritz .waffle a { color: inherit; }
+body {
+  margin: 0;
+  background-color: ##3f4443;
+  text-rendering: optimizeLegibility;
+}
+.waffle {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-style: none;
+    border-spacing: 0;
+    width: 0;
+    cursor: default;
+}
+.ritz .waffle {
+    background-color: #ffffff;
+    direction: ltr;
+    vertical-align: middle;
+    font-size: 12pt;
+    font-family: Calibri, Helvetica, sans-serif;
+}
+.waffle tr th {
+    background-color: #eee;
+    color: #333;
+    border: 1px solid #ccc;
+    border-width: 0 1px 1px 0;
+    font-weight: 400;
+    font-size: 8pt;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.waffle td {
+    padding: 0 3px;
+    border: 1px solid #e5e5e5;
+    border-color: rgba(0, 0, 0, .15);
+    border-width: 0 1px 1px 0;
+    background-color: #fff;
+    line-height: inherit;
+    text-align: center;
+    vertical-align: middle;
+    direction: ltr;
+    overflow: hidden;
+    position: relative;
+}
+.waffle td button {
+    position: absolute;
+    top: 33%;
+    left: 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.grid-container {height:100%;width:100%;overflow:auto}
+
+.ritz .waffle input {
+    width: 100%;
+    height: 35px;
+}
+.ritz .waffle .s1 {
+    font-weight:bold;
+    color:#a9a9a9;
+    font-size:28px;
+}
+
+.ritz .waffle .s5,
+.ritz .waffle .s6,
+.ritz .waffle .s7,
+.ritz .waffle .s8,
+.ritz .waffle .s9,
+.ritz .waffle .s10,
+.ritz .waffle .s14,
+.ritz .waffle .s16,
+.ritz .waffle .s26 {
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+.ritz .waffle .s2,
+.ritz .waffle .s13,
+.ritz .waffle .s21 {
+    border-bottom: 1px solid #000000;
+}
+
+.ritz .waffle .s4,
+.ritz .waffle .s13,
+.ritz .waffle .s19,
+.ritz .waffle .s23 {
+    border-right: 1px solid #000000;
+}
+
+.ritz .waffle .s6,
+.ritz .waffle .s9,
+.ritz .waffle .s10,
+.ritz .waffle .s13,
+.ritz .waffle .s14,
+.ritz .waffle .s16,
+.ritz .waffle .s20,
+.ritz .waffle .s21,
+.ritz .waffle .s23,
+.ritz .waffle .s26 {
+    font-weight: bold;
+}
+
+.ritz .waffle .s5,
+.ritz .waffle .s7 {
+    font-family: Georgia, serif;
+}
+
+.ritz .waffle .s9,
+.ritz .waffle .s13 { font-size:10pt;}
+
+.ritz .waffle .s11 { color: #ffffff;}
+.ritz .waffle .s12 { color: #999;}
+
+.ritz .waffle .s5 { background-color:#ffffcc;}
+.ritz .waffle .s7 { background-color:#f4cccc; cursor: cell;}
+.ritz .waffle .s10 { background-color:#d9d2e9;}
+.ritz .waffle .s14 { background-color:#d9ead3;}
+.ritz .waffle .s16 { background-color:#f08080;}
+
+.ritz .waffle .s18,
+.ritz .waffle .s19 { border-bottom: 1px dotted #000000;}
+
+.ritz .waffle .s22 { color: #ff0000;}
+/* clases libres: .s3, .s15, .s17 */

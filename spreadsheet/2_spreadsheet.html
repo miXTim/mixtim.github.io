@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zxx">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>Reglas de tres</title>
+	<link type="text/css" rel="stylesheet" href="./2_sheet.css">
+</head>
+<body>
+<div class="ritz grid-container" dir="ltr">
+  <table class="waffle" cellspacing="0" cellpadding="0">
+	<thead>
+	  <tr><th style="width:20px;"></th><th style="width:17px;">A</th><th style="width:120px;">B</th><th style="width:120px;">C</th><th style="width:120px;">D</th><th style="width:80px;">E</th><th style="width:17px;">F</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+      <th style="height: 59px"><div style="line-height: 59px">1</div></th>
+	  	<td></td><td class="s1" colspan="4">Receta de 3 ingredientes</td><td></td>
+    </tr>
+	  <tr>
+      <th style="height: 19px"><div style="line-height: 19px">2</div></th>
+	  	<td></td><td class="s2"></td><td class="s2"></td><td class="s2"></td><td></td><td></td>
+    </tr>
+		<tr>
+      <th style="height: 39px"><div style="line-height: 39px">3</div></th>
+	  	<td class="s4"></td><td class="s5">Ingr.1</td><td class="s5">Ingr.2</td><td class="s5">Ingr.3</td><td></td><td></td>
+    </tr>
+		<tr>
+      <th style="height: 59px"><div style="line-height: 59px">4</div></th>
+	  	<td class="s6"></td><td class="s7" contenteditable>CHOCO NEGRO</td><td class="s7" contenteditable>FRAMBUESA</td><td class="s7" contenteditable>SÉSAMO</td><td></td><td></td>
+    </tr>
+		<tr>
+      <th style="height: 39px;"><div style="line-height: 39px">5</div></th>
+	  	<td class="s9" title="Porcentaje">%</td>
+			<td class="s10"></td>
+			<td class="s10"><input type="number" id="n1" value="1" aria-label="Primer valor" autofocus></td>
+			<td class="s10" id="D5"></td>
+			<td class="s11">0,10</td><td></td>
+    </tr>
+		<tr>
+      <th style="height: 39px;"><div style="line-height: 39px">6</div></th>
+	  	<td class="s13" title="Cantidad">gr</td>
+			<td class="s14"></td>
+			<td class="s14"><input type="number" id="n2" value="1" aria-label="Segundo valor"></td>
+			<td class="s16">x</td>
+			<td class="s11">0,00</td><td></td>
+    </tr>
+		<tr>
+      <th style="height: 19px"><div style="line-height: 19px">7</div></th>
+	  	<td></td><td></td><td></td><td></td><td></td><td></td>
+    </tr>
+		<tr>
+      <th style="height: 19px"><div style="line-height: 19px">8</div></th>
+	  	<td></td><td class="s12">P(Ingr.2)</td><td class="s12">C(Ingr.2)</td><td></td><td></td><td></td>
+    </tr>
+		<tr>
+      <th style="height: 29px"><div style="line-height: 29px">9</div></th>
+	  	<td></td><td class="s18" id="B9">–</td><td class="s19" id="C9">–</td><td class="s20" id="D9" rowspan="2"><div id="dynamic">–</div></td><td rowspan="2"><button id="btnSum" onclick="sum()">Operar</button></td><td></td>
+    </tr>
+		<tr>
+      <th style="height: 29px"><div style="line-height: 29px">10</div></th>
+	  	<td></td><td id="B10">–</td><td class="s23" id="C10">x</td><td></td>
+    </tr>
+		<tr>
+      <th style="height: 19px"><div style="line-height: 19px">11</div></th>
+	  	<td></td><td class="s12">P(Ingr.1+Ingr.3)</td><td></td><td class="s12">C(Ingr.1+Ingr.3)</td><td></td><td></td>
+    </tr>
+		<tr>
+      <th style="height: 19px"><div style="line-height: 19px">12</div></th>
+	  	<td></td><td></td><td></td><td></td><td class="s2"></td><td class="s2"></td>
+    </tr>
+		<tr>
+      <th style="height: 29px"><div style="line-height: 29px">13</div></th>
+	  	<td></td><td class="s25" id="B13">–</td><td class="s18" id="C13">100%</td><td class="s19" id="D13">–</td><td class="s26" id="E13" rowspan="2">–</td><td class="s21" rowspan="2">gr</td>
+    </tr>
+		<tr>
+      <th style="height: 29px"><div style="line-height: 29px">14</div></th>
+	  	<td></td><td class="s2" id="B14">–</td><td class="s22" id="C14">4</td><td class="s23">x</td>
+    </tr>
+		<tr>
+      <th style="height: 39px"><div style="line-height: 39px">15</div></th>
+	  	<td></td><td class="s25" id="B15">0,00</td><td></td><td></td><td></td><td></td>
+    </tr>
+	</tbody>
+  </table>
+</div>
+
+<script>
+	const container = document.querySelector("#dynamic");
+	const operar = document.querySelector("#btnSum");
+	const B9 = document.querySelector("#B9");  /* P(Ingr.2) */
+	const B10 = document.querySelector("#B10");
+	const B14 = document.querySelector("#B14");  /* C(Ingr.2) */
+	const C9 = document.querySelector("#C9");  /* C(Ingr.2) */
+	const D9 = document.querySelector("#D9");
+	const B13 = document.querySelector("#B13");
+	const B15 = document.querySelector("#B15");
+	const D13 = document.querySelector("#D13");
+	const E13 = document.querySelector("#E13");
+
+	function sum() {
+		let n1 = Number(document.getElementById("n1").value);
+		let n2 = Number(document.getElementById("n2").value);
+		let sum = Math.round((n2 * (100 - n1)) / n1);
+		B13.textContent = sum;
+		container.textContent = sum;
+		B9.textContent = n1; // P(Ingr.2)
+		B10.textContent = 100 - n1; // 100% - P(Ingr.2)
+		C9.textContent = n2; // C(Ingr.2)
+		B14.textContent = n2;
+		B15.textContent = D13.textContent = n2 + sum;
+		E13.textContent = ((n2 + sum) * 4) / 100;
+	};
+
+	const D5 = document.querySelector("#D5");	/* P(Ingr.3) */
+	const C14 = document.querySelector("#C14");
+</script>
+</body>
+</html>
