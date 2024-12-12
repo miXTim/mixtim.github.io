@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Slide Rules Data</title>
+	<title>Slide Rules Data 🔢</title>
   <link rel="stylesheet" href="3_sheet.css">
 </head>
 <body>
@@ -32,57 +32,59 @@
           <td colspan="3"></td>
         </tr>
         <tr>
-          <td class="tooltip" data-tooltip="Porcentaje ingrediente 1">P(Ingr.1)</td>
-          <td class="tooltip" data-tooltip="Porcentaje ingrediente 2">
-			<input type="number" id="n1" value="0" aria-label="Porcentaje ingrediente 2" autofocus>
+          <td class="tooltip" id="A3" data-tooltip="Porcentaje ingrediente_1">P(Ingr.1)</td>
+          <td class="tooltip" data-tooltip="Porcentaje ingrediente_2">
+			<input type="number" id="n1" min="0" max="99" value="0" aria-label="Porcentaje ingrediente 2" autofocus>
 		  </td>
-          <td class="tooltip" data-tooltip="Porcentaje ingrediente 3">
-			<input type="number" id="n3" value="0" aria-label="Porcentaje ingrediente 3">
+          <td class="tooltip" data-tooltip="Porcentaje ingrediente_3">
+			<input type="number" id="n3" min="0" max="99" value="0" aria-label="Porcentaje ingrediente 3">
 		  </td>
         </tr>
         <tr>
-          <td title="Cantidad ingrediente 1">C(Ingr.1)</td>
-          <td title="Cantidad ingrediente 2">
-		    <input type="number" id="n2" value="0" aria-label="Cantidad ingrediente 2">
+          <td class="tooltip" id="A4" data-tooltip="Cantidad ingrediente_1">C(Ingr.1)</td>
+          <td class="tooltip" data-tooltip="Cantidad ingrediente_2">
+		    <input type="number" id="n2" min="0" max="999999" value="0" aria-label="Cantidad ingrediente 2">
 		  </td>
-          <td title="Cantidad ingrediente 3">[?]</td>
+          <td class="tooltip" data-tooltip="Cantidad ingrediente_3">(?)</td>
         </tr>
         <tr>
           <td colspan="3">
-            <button id="btnSum" onclick="sum()">Operar</button>
+            <button class="button" id="btnSum">Calcular 🧮</button>
           </td>
         </tr>
         <tr>
-          <td id="B9" title="Porcentaje ingrediente 2">P(Ingr.2)</td>
-          <td id="C9" title="Cantidad ingrediente 2">C(Ingr.2)</td>
-          <td id="D9" rowspan="2"title="Cantidad ingredientes 1 + 3"><div id="dynamic">C(Ingr.1+Ingr.3)</div></td>
+          <td id="A6" class="tooltip" data-tooltip="Porcentaje ingrediente_2">P(Ingr.2)</td>
+          <td id="B6" class="tooltip" data-tooltip="Cantidad ingrediente_2">C(Ingr.2)</td>
+          <td rowspan="2" class="tooltip" data-tooltip="Cantidad ingredientes 1 + 3">
+			<div id="dynamic">C(Ingr.1+Ingr.3)</div>
+		  </td>
         </tr>
         <tr>
-          <td id="B10" title="Porcentaje ingredientes 1 + 3">100 - P(Ingr.2)</td>
-          <td id="C10">x</td>
+          <td id="A7" class="tooltip" data-tooltip="Porcentaje ingredientes 1 + 3">100 - P(Ingr.2)</td>
+          <td>x</td>
         </tr>
         <tr>
           <td colspan="3"></td>
         </tr>
         <tr>
-          <td id="B13">C(Ingr.1+Ingr.3)</td>
-          <td id="C13" title="Porcentaje total">100%</td>
-          <td id="D13" title="Cantidad total">Cantidad total</td>
+          <td id="A9" class="tooltip" data-tooltip="Cantidad ingredientes 1 + 3">C(Ingr.1+Ingr.3)</td>
+          <td class="tooltip" data-tooltip="Porcentaje total">100%</td>
+          <td id="C9" class="tooltip" data-tooltip="Cantidad total">Cantidad total</td>
         </tr>
         <tr>
-          <td id="B14">C(Ingr.2)</td>
-          <td id="C14" title="Porcentaje ingrediente 3">¿4?</td>
+          <td id="A10" class="tooltip" data-tooltip="Cantidad ingrediente_2">C(Ingr.2)</td>
+          <td id="B10" class="tooltip" data-tooltip="Porcentaje ingrediente_3">P(Ingr.3)</td>
           <td>x</td>
         </tr>
         <tr>
-          <td id="B15" class="s1">Cantidad total</td>
+          <td id="A11" class="s1">Cantidad total</td>
           <td></td>
-          <td id="E13" title="Cantidad ingrediente 3">–</td>
+          <td id="C11" class="tooltip" data-tooltip="Cantidad ingrediente_3">C(Ingr.3)</td>
         </tr>
       </tbody>
     </table>
   </div>
   
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
