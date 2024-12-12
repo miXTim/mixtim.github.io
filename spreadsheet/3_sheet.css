@@ -9,7 +9,7 @@ body {
   margin: 0 auto;
   padding: 0 0.25em;
   /* width: min(600px, 100%); */
-  font: 400 1.0625em/1 "Segoe UI", Helvetica, Arial, sans-serif;
+  font: 400 1em/1 "Segoe UI", Helvetica, Arial, sans-serif;
 }
 table::after {
   content: '';
@@ -17,6 +17,9 @@ table::after {
   clear: both;
 }
 button {
+	padding: 0.25em 0.75em;
+    min-width: 10ch;
+    min-height: 44px;
     cursor: pointer;
 	-ms-touch-action: manipulation;
 	touch-action: manipulation;
@@ -31,12 +34,12 @@ button {
 }
 .table-title h3 {
   color: #73EA9E;
-  font: small-caps 400 1.75em/1 helvetica, arial, sans-serif;
+  font: small-caps 400 1.6875em/1 helvetica, arial, sans-serif;
 }
 /*** Estilos de Tabla **/
 [role="table"] .table-fill {
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
   border-radius: 0.6em 0.6em 0 0;
 } 
 [role="table"] th {
@@ -66,29 +69,39 @@ button {
   font-size: 18px;
 }
 [role="table"] input {
-	width: min(calc(100% - 8px));
-	max-width: 10em;
+	width: min(calc(100% - 12px));
+	max-width: 8rem;
     height: 1.5rem;
+	padding: 1px 4px;
+	background-color: #fff1;
+	color: inherit;
+	border: 1px ridge #308576;
   font-size: 16px;
-  font-weight: bold;
+    border-radius: 0.25em;
 }
-[role="table"] td button {
-    width: 8rem;
-    height: 2rem;
-  background-color: #f0f0f0;
-  border: 1px solid #0003;
-  font-size: 17px;
-  border-radius: 0.25rem;
+[role="table"] td .button {
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: start;
+    background-color: #6B5B95;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1em;
+    line-height: 1.1;
+    text-align: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    border-radius: 0.25em;
+    transition: 220ms all ease-out;
 }
 [role="table"] td button:hover,
-[role="table"] td  button:focus {
-	background-color: #dfdfdf;
+[role="table"] td  button:active {
+	background-color: #6827B0;
 }
-[role="table"] td button:active {
-	background-color: #ccc;
-}
-td:hover {
-  background-color: #6B5B95;
+[role="table"] td button:focus {
+	outline: none;
+    box-shadow: 0 0 0 4px #308576;
 }
 .s1 { border-top:1px solid;}
 #D9 { position: relative;}
@@ -120,16 +133,16 @@ td:hover {
 		margin-left: 5px;
 		background-color: #161312;
 		color: #fff;
-		border: 1px solid #bfa07a;
+		border: 1px solid #666;
 		font-size: 0.8125em;
 		letter-spacing: 0.05em;
+		text-wrap: wrap;
 		border-radius: 0.25em;
 		visibility: hidden;
 		opacity: 0;
 		cursor: pointer;
 		transition: transform 400ms, opacity 300ms;
 		transform: translateX(-54%) translateY(-24px);
-		text-wrap: nowrap;
 	  }
 	  &:hover::after {
 		visibility: visible;
