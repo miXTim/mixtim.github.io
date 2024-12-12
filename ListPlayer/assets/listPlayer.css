@@ -196,6 +196,7 @@ input#duration_slider {
   font-size: clamp(0.9rem, 4cqi, 1.5rem);
   line-height: 1.2;
   text-shadow: 0 0 3px #000;
+  margin-top: 0.5em;
 }
 @supports (font-variation-settings: normal) {
     #title {
@@ -278,7 +279,7 @@ svg#fullscr:hover,
 	.main .image { grid-area: 2 / 2 / 4 / 7; width: 100%;}
 	input#duration_slider { margin-top: 1em;}
 	#title { grid-area: 2 / 8 / 4 / 13;}
-	#artist { grid-area: 4 / 8 / 6 / 13;}
+	#artist { grid-area: 4 / 8 / 6 / 13;margin-top: 0;}
   .controls1 { grid-area: 8 / 2 / 9 / 7;}
   .current { grid-area: 8 / 2 / 9 / 7;
     align-self: center;
