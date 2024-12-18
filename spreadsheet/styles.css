@@ -1,5 +1,5 @@
 :root {
-  --font-s1: clamp(0.8125rem, 2vw, 1rem);
+  --font-s1: clamp(0.75rem, 2vw, 1rem);
   --font-s2: clamp(1.0625rem, 4vw, 1.1875rem);
   --font-s3: clamp(1.75rem, 4vw, 2rem);
 }
