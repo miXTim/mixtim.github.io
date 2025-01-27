@@ -1,88 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<meta content="width=device-width, initial-scale=1, user-scalable=0" name="viewport" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Slide Rules Data 🔢</title>
+	<title>Slide Rules 🧮</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div role="table"
-     aria-label="Receta"
-     aria-describedby="table_desc">
-    <table class="table-fill">
+  <div class="table" aria-label="Reglas de cálculo" aria-describedby="table_desc">
       <div class="table-title" id="table_desc">
-        <h3>Receta de 3 ingredientes</h3>
+        <h3>Receta de 3 Ingredientes</h3>
       </div>
-      <thead>
-        <tr>
-          <th>Ingr.1</th>
-          <th>Ingr.2</th>
-          <th>Ingr.3</th>
-        </tr>
-      </thead>
-      <tbody class="gradient">
-        <tr>
-          <td contenteditable>CHOCO NEGRO</td>
-          <td contenteditable>FRAMBUESA</td>
-          <td contenteditable>SÉSAMO</td>
-        </tr>
-        <tr>
-          <td colspan="3"></td>
-        </tr>
-        <tr>
-          <td class="tooltip" id="A3" data-tooltip="Porcentaje ingrediente_1">P(Ingr.1)</td>
-          <td class="tooltip" data-tooltip="Porcentaje ingrediente_2">
-			<input type="number" id="n1" min="0" max="99" value="0" aria-label="Porcentaje ingrediente 2" autofocus>
-		  </td>
-          <td class="tooltip" data-tooltip="Porcentaje ingrediente_3">
-			<input type="number" id="n3" min="0" max="99" value="0" aria-label="Porcentaje ingrediente 3">
-		  </td>
-        </tr>
-        <tr>
-          <td class="tooltip" id="A4" data-tooltip="Cantidad ingrediente_1">C(Ingr.1)</td>
-          <td class="tooltip" data-tooltip="Cantidad ingrediente_2">
+    <div class="table-fill">
+      
+        <div class="th">Ingr.1</div>
+        <div class="th">Ingr.2</div>
+        <div class="th">Ingr.3</div>
+      <div class="td" contenteditable>CHOCO NEGRO</div>
+      <div class="td" contenteditable>FRAMBUESA</div>
+      <div class="td" contenteditable>SÉSAMO</div>
+        
+      <div class="spancol">.</div>
+        
+      <div class="td tooltip" id="A3" data-tooltip="Porcentaje ingrediente_1">P(Ingr.1)</div>
+      <div class="td tooltip" data-tooltip="Porcentaje ingrediente_2">
+			  <input type="number" id="n1" min="0" max="99" value="0" aria-label="Porcentaje ingrediente 2" autofocus>
+		  </div>
+      <div class="td tooltip" data-tooltip="Porcentaje ingrediente_3">
+			  <input type="number" id="n3" min="0" max="99" value="0" aria-label="Porcentaje ingrediente 3">
+		  </div>
+      
+      <div class="td tooltip" id="A4" data-tooltip="Cantidad ingrediente_1">C(Ingr.1)</div>
+      <div class="td tooltip" data-tooltip="Cantidad ingrediente_2">
 		    <input type="number" id="n2" min="0" max="999999" value="0" aria-label="Cantidad ingrediente 2">
-		  </td>
-          <td class="tooltip" data-tooltip="Cantidad ingrediente_3">(?)</td>
-        </tr>
-        <tr>
-          <td colspan="3">
-            <button class="button" id="btnSum">Calcular 🧮</button>
-          </td>
-        </tr>
-        <tr>
-          <td id="A6" class="tooltip" data-tooltip="Porcentaje ingrediente_2">P(Ingr.2)</td>
-          <td id="B6" class="tooltip" data-tooltip="Cantidad ingrediente_2">C(Ingr.2)</td>
-          <td class="C6" rowspan="2" class="tooltip" data-tooltip="Cantidad ingredientes 1 + 3">
-			<div id="dynamic">C(Ingr.1+Ingr.3)</div>
-		  </td>
-        </tr>
-        <tr>
-          <td id="A7" class="tooltip" data-tooltip="Porcentaje ingredientes 1 + 3">100 - P(Ingr.2)</td>
-          <td>x</td>
-        </tr>
-        <tr>
-          <td colspan="3"></td>
-        </tr>
-        <tr>
-          <td id="A9" class="tooltip" data-tooltip="Cantidad ingredientes 1 + 3">C(Ingr.1+Ingr.3)</td>
-          <td class="tooltip" data-tooltip="Porcentaje total">100%</td>
-          <td id="C9" class="tooltip" data-tooltip="Cantidad total">Cantidad total</td>
-        </tr>
-        <tr>
-          <td id="A10" class="tooltip" data-tooltip="Cantidad ingrediente_2">C(Ingr.2)</td>
-          <td id="B10" class="tooltip" data-tooltip="Porcentaje ingrediente_3">P(Ingr.3)</td>
-          <td>x</td>
-        </tr>
-        <tr>
-          <td id="A11" class="s1">Cantidad total</td>
-          <td></td>
-          <td id="C11" class="tooltip" data-tooltip="Cantidad ingrediente_3">C(Ingr.3)</td>
-        </tr>
-      </tbody>
-    </table>
+      </div>
+      <div class="td tooltip" data-tooltip="Cantidad ingrediente_3">(?)</div>
+
+      <div class="spancol">
+        <button class="button" id="btnSum">Calcular 🔢</button>
+      </div>
+
+      <div id="A6" class="td tooltip" data-tooltip="Porcentaje ingrediente_2">P(Ingr.2)</div>
+      <div id="B6" class="td tooltip" data-tooltip="Cantidad ingrediente_2">C(Ingr.2)</div>
+      <div class="td spanrow C6 tooltip" data-tooltip="Cantidad ingredientes 1 + 3">
+        <div id="dynamic">C(Ingr.1+Ingr.3)</div>
+      </div>
+
+
+      <div id="A7" class="td tooltip" data-tooltip="Porcentaje ingredientes 1 + 3">100 - P(Ingr.2)</div>
+      <div class="td">x</div>
+
+      <div class="spancol">.</div>
+
+      <div id="A9" class="td tooltip" data-tooltip="Cantidad ingredientes 1 + 3">C(Ingr.1+Ingr.3)</div>
+      <div class="td tooltip" data-tooltip="Porcentaje total">100%</div>
+      <div id="C9" class="td tooltip" data-tooltip="Cantidad total">Cantidad total</div>
+
+      <div id="A10" class="td tooltip" data-tooltip="Cantidad ingrediente_2">C(Ingr.2)</div>
+      <div id="B10" class="td tooltip" data-tooltip="Porcentaje ingrediente_3">P(Ingr.3)</div>
+      <div class="td">x</div>
+
+      <div id="A11" class="td s1">Cantidad total</div>
+      <div class="td"></div>
+      <div id="C11" class="td tooltip" data-tooltip="Cantidad ingrediente_3">C(Ingr.3)</div>
+      
+    </div>
+    <br>
+    <a href="#msg">Calculadora</a>
+  
+    <div id="msg" class="modal">
+      <div class="modal-dialog">
+      
+        <div class="modal-content">
+          
+          <a href="#" class="closebtn">×</a>
+          <div class="calculator">
+            <input type="text" id="result" placeholder="0" readonly aria-label="Calculadora" />
+            <span id="buttons"></span>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
   </div>
   
   <script src="app.js"></script>

@@ -1,120 +1,132 @@
 :root {
   --font-s1: clamp(0.8125rem, 2vw, 1rem);
-  --font-s2: clamp(1rem, 4vw, 1.1875rem);
+  --font-s2: clamp(1.0625rem, 4vw, 1.1875rem);
   --font-s3: clamp(1.75rem, 4vw, 2rem);
+  --DR01-1: #AAB7BF;
+  --DR01-2: #736356;
+  --DR01-3: #BFB1A8;
+  --DR01-4: #AD1D1D;
+  --DR01-5: #261201;
 }
 body {
-  background-color: #3F4443;
+  background-color: var(--DR01-5);
   font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
 }
-[role="table"] {
-  display: table;
+.table {
+  display: grid;
+  justify-items: center;
+  gap: 0.5em;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0 0.25em;
-  /* width: min(600px, 100%); */
-  font-family: Helvetica, Arial, sans-serif;
   line-height: 1;
 }
-table::after {
-  content: '';
-  display: none;
-  clear: both;
+.table a { color: var(--DR01-4);}
+
+/*** Estilos de Tabla **/
+.table-fill {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(3, 1fr);
+  width: min(500px, 100%);
+  text-align: center;
+  filter: drop-shadow(2px 4px 6px rgb(0 0 0 / 0.5));
+  border-radius: 0.6em 0.6em 0 0;
+}
+.table-title h3 {
+  margin: 0.5em 0;
+  color: var(--DR01-3);
+  font-weight: 400;
+  font-size: var(--font-s3);
+  font-variant: small-caps;
+}
+.table-fill .spancol {
+  grid-column: span 3;
+}
+.table-fill .spanrow {
+  grid-row: span 2;
+}
+.table-fill .th {
+  padding: 1em;
+  background-image: linear-gradient(170deg, var(--DR01-4) 0%, var(--DR01-5) 85%);
+  color: #fafafa;
+  font-size: var(--font-s2);
+  font-weight: 200;
+  vertical-align: middle;
+}
+.th:first-child {
+  border-top-left-radius: 0.5em;
+}
+.th:nth-child(3)  {
+  border-top-right-radius: 0.5em;
+}
+div[contenteditable] {
+  box-shadow: 0 0 0 1px white inset;
+  cursor: cell;
+}
+.table-fill .td {
+  display: grid;
+  place-items: center;
+  padding: clamp(0.3em, 3.3vw, 0.9em) 0.3125em;
+  /* color: hsl(340, 41%, 90%); */
+  background-color: var(--DR01-1);
+  vertical-align: middle;
+  font-size: var(--font-s2);
+}
+.table-fill .td:has(input) {
+	padding: 2px 0.25em;
+}
+.table-fill input {
+	width: min(calc(100% - 12px));
+	max-width: 8rem;
+    height: 1.5rem;
+	padding: 2px 0.25em;
+	background-color: #fff3;
+	color: inherit;
+	border: 1px ridge var(--DR01-3);
+  font-size: var(--font-s2);
+    border-radius: 0.25em;
 }
 button {
-	padding: 0.25em 0.75em;
-    min-width: 10ch;
-    min-height: 44px;
-    cursor: pointer;
+  font: 1.4375em / 1 monospace;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  transition: 300ms;
 	-ms-touch-action: manipulation;
 	touch-action: manipulation;
     -webkit-user-select: none;
     user-select: none;
 }
-
-[role="table"] [role="row"] { display: table-row;}
-[role="table"] [role="cell"],
-[role="table"] [role="columnheader"] {
-  display: table-cell;
-}
-.table-title h3 {
-  margin: 0.5em 0;
-  color: #73EA9E;
-  font-weight: 400;
-  font-size: var(--font-s3);
-  font-variant: small-caps;
-}
-/*** Estilos de Tabla **/
-[role="table"] .table-fill {
-  text-align: center;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
-  border-radius: 0.6em 0.6em 0 0;
-} 
-[role="table"] th {
-  padding: 1.25rem;
-  background-image: linear-gradient(165deg, DarkSlateGray 0%, #000 100%);
-  color: #fafafa;
-  border-bottom: 1px solid black;
-  font-size: var(--font-s2);
-  font-weight: 200;
-  vertical-align: middle;
-}
-[role="table"] th:first-child {
-  border-top-left-radius: 0.5em;
-}
-[role="table"] th:last-child  {
-  border-top-right-radius: 0.5em;
-}
-[role="table"] td[contenteditable] {
-  background-color: #30857644;
-  cursor: cell;
-}
-[role="table"] td {
-  width: 33%;
-  padding: clamp(0.3125em, 3.5vw, 0.9em) 0.3125em;
-  color:#e2e2f2;
-  vertical-align: middle;
-  font-size: var(--font-s2);
-}
-[role="table"] input {
-	width: min(calc(100% - 12px));
-	max-width: 8rem;
-    height: 1.5rem;
-	padding: 2px 4px;
-	background-color: #fff1;
-	color: inherit;
-	border: 1px ridge #308576;
-  font-size: var(--font-s2);
-    border-radius: 0.25em;
-}
-[role="table"] td .button {
-    border: none;
+.table-fill .button {
+  border: none;
+  margin: 1em 0;
+	padding: 0.75em 1.5em;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    align-self: start;
-    background-color: #6B5B95;
-    color: #fff;
+    background-color: var(--DR01-3);
+    color: var(--DR01-5);
     font-family: inherit;
-  font-size: var(--font-s2);
+	font-size: var(--font-s2);
     line-height: 1.1;
     text-align: center;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
-    border-radius: 0.25em;
-    transition: 220ms all ease-out;
+    box-shadow: 0 3px 5px rgba(0 0 0/0.18);
+    border-radius: 2em;
+    transition: 200ms all ease-out;
 }
-[role="table"] td button:hover,
-[role="table"] td  button:active {
-	background-color: #6827B0;
+.table-fill button:hover,
+.table-fill button:active {
+	background-color: var(--DR01-4);
+	color: white;
 }
-[role="table"] td button:focus {
+.table-fill button:focus {
 	outline: none;
-    box-shadow: 0 0 0 4px #308576;
+    box-shadow: 0 0 0 4px var(--DR01-2);
 }
-.s1 { border-top: 1px solid;}
-.s2 { color: red;}
-.C6 { position: relative;}
+.s1 { border-top: 1px solid var(--DR01-4);}
 .C6::before {
   content: '';
   position: absolute;
@@ -122,14 +134,7 @@ button {
   left: -1px;
   height: 100%;
   width: 1px;
-  background-color: currentColor;
-}
-.gradient {
-  background-color: #308576;
-  background: -moz-linear-gradient(top, #30857699 0%, #6827B0aa 100%);
-  background: -webkit-linear-gradient(top, #30857699 0%,#6827B0aa 100%);
-  background: linear-gradient(to bottom, #30857699 0%,#6827B0aa 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#308576', endColorstr='#6827B0',GradientType=0 );
+  background-color: var(--DR01-4);
 }
   /* tooltips */
   .tooltip {
@@ -141,9 +146,9 @@ button {
 		top: -5ch;
 		padding: 4px 8px 6px;
 		margin-left: 5px;
-		background-color: #161213;
-		color: #fff;
-		border: 1px solid #666;
+		background-color: black;
+		color: var(--DR01-1);
+		border: 1px solid var(--DR01-2);
 		font-size: 0.8125em;
 		letter-spacing: 0.05em;
 		text-wrap: wrap;
@@ -160,3 +165,100 @@ button {
 		transform: translateX(-54%);
 	  }
   }
+/* Add animation (Chrome, Safari, Opera) */
+@-webkit-keyframes rise {
+	from {top:100px;opacity:0;}
+	to {top:0;opacity:1;}
+}
+/* Add animation (Standard syntax) */
+@keyframes rise {
+	from {top:100px;opacity:0;}
+	to {top:0;opacity:1;}
+}
+/* The modal's background */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+/* Display the modal when targeted */
+  .modal:target {
+    display: table;
+    position: absolute;
+  }
+/* The modal box */
+  .modal-dialog {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100vw;
+  }
+
+/* The modal's content */
+  .modal-dialog .modal-content {
+    margin: auto;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: min(320px, 90%);
+  /* Add animation */
+    -webkit-animation-name: rise; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 600ms; /* Chrome, Safari, Opera */
+    animation-name: rise;
+    animation-duration: 500ms;
+    z-index: 99;
+  }
+/* The button used to close the modal */
+  .closebtn {
+    float: right;
+    margin-right: 1rem;
+    font-size: 35px;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: var(--DR01-2);
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+/* ------- The contents ------- */
+.calculator {
+  width: 280px;
+  padding: 1.25em;
+  background-color: var(--DR01-5);
+  border-radius: 0.5em;
+  box-shadow: 0 4px 8px rgba(0 0 0 /50%);
+}
+#result {
+  padding: 0.75em;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  text-align: right;
+  border: 1px solid var(--DR01-1);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+}
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+#buttons button {
+  padding: 0.5em;
+  background-color: var(--DR01-3);
+}
+#buttons button:last-child {
+  grid-column: span 4;
+  background-color: SkyBlue;
+}
+#buttons button:nth-child(4n) {
+  background-color: var(--DR01-1);
+}
+#buttons button:hover {
+  background-color: var(--DR01-2);
+  color: #fff;
+}

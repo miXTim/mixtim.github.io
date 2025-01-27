@@ -28,7 +28,41 @@ operar.addEventListener("click", function() {
 	B10.textContent = n3; // P(Ingr.3)
 	A11.textContent = C9.textContent = n2 + sum; // C(total)
 	C11.textContent = ((n2 + sum) * n3) / 100 + " gr"; // C(Ingr.3)
-	C11.style.boxShadow = "0 0 2px 2px #308576 inset";
+	C11.style.boxShadow = "0 0 2px 2px var(--DR01-4) inset";
 	A4.textContent = (n2 + sum) - Math.round((n2 + ((n2 + sum) * n3) / 100)); // C(Ingr.1)
   }
-})
+});
+
+/* Calculadora */
+const result = document.getElementById("result");
+const buttonsContainer = document.getElementById("buttons");
+const buttons = [
+	"7", "8", "9", "C", 
+	"4", "5", "6", "+", 
+	"1", "2", "3", "-",
+	".", "0", "/", "*",
+	"="
+];
+buttons.forEach(button => {
+	const btn = document.createElement("button");
+	btn.textContent = button;
+	btn.onclick = () => handleButtonClick(button);
+	buttonsContainer.appendChild(btn);
+});
+function handleButtonClick(value) {
+	if (value === "C") {
+		result.value = "";
+	} else if (value === "=") {
+		try {
+			result.value = eval(result.value);
+		} catch {
+			result.value = "Error";
+		}
+	} else {
+		if (result.value === "0" || result.value === "") {
+			result.value = value;
+		} else {
+			result.value += value;
+		}
+	}
+}
