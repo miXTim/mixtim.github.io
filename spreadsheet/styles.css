@@ -20,7 +20,6 @@ body {
   gap: 0.5em;
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 0 0.25em;
   line-height: 1;
 }
 .table a { color: var(--DR01-4);}
@@ -62,18 +61,18 @@ body {
 .th:nth-child(3)  {
   border-top-right-radius: 0.5em;
 }
-div[contenteditable] {
-  box-shadow: 0 0 0 1px white inset;
-  cursor: cell;
-}
 .table-fill .td {
   display: grid;
   place-items: center;
   padding: clamp(0.3em, 3.3vw, 0.9em) 0.3125em;
-  /* color: hsl(340, 41%, 90%); */
   background-color: var(--DR01-1);
   vertical-align: middle;
   font-size: var(--font-s2);
+}
+div[contenteditable].td {
+  padding: 0.25em;
+  box-shadow: 0 0 0 1px white inset;
+  cursor: cell;
 }
 .table-fill .td:has(input) {
 	padding: 2px 0.25em;
